@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="2Parcial" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acb1ceb9-50ae-446b-b998-c536c015c17f">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="22"/>
+	<property name="ireport.y" value="27"/>
+	<queryString>
+		<![CDATA[SELECT
+VEHICULO.VEHICULO_TIPO,
+VEHICULO.VEHICULO_MARCA,
+VEHICULO.VEHICULO_PLACA,
+BOMBERO.BOMBERO_NOMBRE,
+BOMBERO.BOMBERO_APELLIDO
+FROM ATIENDE
+INNER JOIN BOMBERO ON ATIENDE.USUARIO_ID = ATIENDE.BOMBERO_ID
+INNER JOIN VEHICULO ON BOMBERO.VEHICULO_ID = ATIENDE.BOMBERO_ID
+WHERE VEHICULO.VEHICULO_MARCA = 'SUZUKI'
+ORDER BY BOMBERO.BOMBERO_APELLIDO ASC]]>
+	</queryString>
+	<field name="vehiculo_tipo" class="java.lang.String"/>
+	<field name="vehiculo_marca" class="java.lang.String"/>
+	<field name="vehiculo_placa" class="java.lang.String"/>
+	<field name="bombero_nombre" class="java.lang.String"/>
+	<field name="bombero_apellido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="84" y="14" width="382" height="43" uuid="579224fc-ca40-4eb2-ab54-d00f41fb0df1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSULTAR LOS NOMBRES DE LOS BOMBEROS QUE SE MOVILIZARON EN EL YATE PARA ATENDER LA EMERGENCIA.]]></text>
+			</staticText>
+			<elementGroup/>
+			<image>
+				<reportElement x="0" y="14" width="84" height="43" uuid="849ff9be-0429-49ad-93fe-90b5cb64d5f2"/>
+				<imageExpression><![CDATA["C:\\Users\\ASTRID\\Desktop\\Captura.JPG"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="466" y="14" width="100" height="65" uuid="9f14c6d1-2fd0-402a-bd94-24a59bf51ff1"/>
+				<imageExpression><![CDATA["C:\\Users\\ASTRID\\Desktop\\descarga1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="0" width="211" height="20" uuid="cdb71a47-09c7-4df9-9ec4-bec2913fc3bf"/>
+				<text><![CDATA[Universo De Discurso: Cuerpo De Bomberos]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="357" y="0" width="198" height="20" uuid="d418ce2e-6427-46c5-afd8-02d81a76195d"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["Estudiante: Delgado Anchundia Yandry Jesús"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="24" width="194" height="20" uuid="ac034218-5cce-454c-aed0-81711471837e"/>
+				<text><![CDATA[Docente Tutor: Ing. Robert Moreira.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="54" width="555" height="1" uuid="9db35319-c88f-4ca8-ae9b-6674e644cae2"/>
+			</line>
+			<staticText>
+				<reportElement x="357" y="24" width="100" height="20" uuid="e4214904-d5af-4c54-b24d-5a36e1ed09dc"/>
+				<text><![CDATA[Curso: 5 "A"]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="a64fa669-d4cf-4d9b-a0a1-cdfa34fa500e"/>
+				<text><![CDATA[TIPO DE VEHICULO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="0" width="86" height="20" uuid="ee536368-5f56-4161-8d8d-09d2c49b6397"/>
+				<text><![CDATA[MARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="2" width="90" height="20" uuid="2f4bd923-f920-44b2-a828-87b7510c286b"/>
+				<text><![CDATA[PLACA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="2" width="88" height="20" uuid="85200281-f422-458a-a91a-a258de41f936"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[NOMBRE BOMBERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="100" height="20" uuid="1b6a1fb2-c796-41d2-a2b9-de9dcd3f4d5c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[APELLIDO BOMBERO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="217" y="2" width="1" height="20" uuid="3b0c9ce6-89e7-49ce-9881-976716547805"/>
+			</line>
+			<line>
+				<reportElement x="101" y="2" width="1" height="20" uuid="5deca179-3458-4f7f-a46d-58e4a0c52fd7"/>
+			</line>
+			<line>
+				<reportElement x="327" y="2" width="1" height="20" uuid="e5e87420-d854-489c-9ceb-ea643ae9e588"/>
+			</line>
+			<line>
+				<reportElement x="437" y="2" width="1" height="20" uuid="ced5ea8d-15db-49ce-a862-0c262d73ca52"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="84" height="20" uuid="1be698c3-a54d-4c31-bf11-d1e5fac2dda9"/>
+				<textFieldExpression><![CDATA[$F{vehiculo_tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="100" height="20" uuid="a23b240b-915f-4909-a7c6-d2e5b51294b3"/>
+				<textFieldExpression><![CDATA[$F{vehiculo_marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="0" width="90" height="20" uuid="bfb84ce4-fd06-46c2-8d70-44547bfd7b23"/>
+				<textFieldExpression><![CDATA[$F{vehiculo_placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="88" height="20" uuid="57f3bce3-86f6-4398-a2de-182de5345e36"/>
+				<textFieldExpression><![CDATA[$F{bombero_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="e6a30dfc-59e4-4b89-a1c5-3a21e604e6d3"/>
+				<textFieldExpression><![CDATA[$F{bombero_apellido}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="100" y="0" width="1" height="20" uuid="d47087e1-9d39-459d-b5f7-901bf4a82465"/>
+			</line>
+			<line>
+				<reportElement x="216" y="0" width="1" height="20" uuid="5fc67b24-c7e8-4316-a244-c227143531e8"/>
+			</line>
+			<line>
+				<reportElement x="327" y="0" width="1" height="20" uuid="83c3b8bc-59a9-45a2-9c17-0cb3a4187ddf"/>
+			</line>
+			<line>
+				<reportElement x="438" y="0" width="1" height="20" uuid="067ccd75-5f3a-494b-bd31-2d8f46322528"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="156" splitType="Stretch">
+			<image>
+				<reportElement x="2" y="0" width="282" height="145" uuid="85e4fcbb-9aa9-45e5-a539-bd719577b0f7"/>
+				<imageExpression><![CDATA["C:\\Users\\ASTRID\\Desktop\\Bomb.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="58" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="34" width="80" height="20" uuid="cc4962ee-710d-4be9-98e3-b2eb790a05ba"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="34" width="40" height="20" uuid="c97db4eb-8ada-4650-a0a1-27a1dfef7783"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="2" y="34" width="100" height="20" uuid="dc67f066-a584-4b39-8677-0f8d8c8c15ad"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
