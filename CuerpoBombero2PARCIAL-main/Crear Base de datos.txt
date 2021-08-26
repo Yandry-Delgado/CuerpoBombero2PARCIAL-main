@@ -1,1 +1,1 @@
-create database Cuerpo de Bomberos
+create database CuerpodeBomberos
